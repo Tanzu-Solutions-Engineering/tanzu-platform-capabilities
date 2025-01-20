@@ -1,0 +1,9 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  creationTimestamp: null
+  name: deployments.se.ext.tanzu.com
+spec:
+  displayName: deployments
+  longDescription: deployments.se.ext.tanzu.com
+  shortDescription: deployments.se.ext.tanzu.com

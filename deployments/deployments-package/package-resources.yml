@@ -1,0 +1,65 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  annotations:
+    capability.tanzu.vmware.com/provides: |-
+      [{
+        "name": "deployments.se.ext.tanzu.com",
+        "displayName": "K8s Deployment",
+        "description": "Provides the Deployments and Services APIs to a space",
+        "vendor": "Tanzu Field",
+        "tags": [ "apps" ],
+        "groupVersionKinds": [
+          { "apiVersion": "v1", "kind": "Service" },
+          { "apiVersion": "apps/v1", "kind": "Deployment" }
+        ]
+      }]
+  creationTimestamp: null
+  name: deployments.se.ext.tanzu.com.0.0.0
+spec:
+  refName: deployments.se.ext.tanzu.com
+  releasedAt: null
+  template:
+    spec:
+      deploy:
+      - kapp: {}
+      fetch:
+      - git: {}
+      template:
+      - ytt:
+          paths:
+          - config
+      - kbld: {}
+  valuesSchema:
+    openAPIv3: null
+  version: 0.0.0
+
+---
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  creationTimestamp: null
+  name: deployments.se.ext.tanzu.com
+spec:
+  displayName: deployments
+  longDescription: deployments.se.ext.tanzu.com
+  shortDescription: deployments.se.ext.tanzu.com
+
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kctrl.carvel.dev/local-fetch-0: .
+  creationTimestamp: null
+  name: deployments
+spec:
+  packageRef:
+    refName: deployments.se.ext.tanzu.com
+    versionSelection:
+      constraints: 0.0.0
+  serviceAccountName: deployments-sa
+status:
+  conditions: null
+  friendlyDescription: ""
+  observedGeneration: 0

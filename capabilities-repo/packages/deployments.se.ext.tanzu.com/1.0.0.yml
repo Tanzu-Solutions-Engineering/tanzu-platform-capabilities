@@ -1,0 +1,41 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  annotations:
+    capability.tanzu.vmware.com/provides: |-
+      [{
+        "name": "deployments.se.ext.tanzu.com",
+        "displayName": "K8s Deployment",
+        "description": "Provides the Deployments and Services APIs to a space",
+        "vendor": "Tanzu Field",
+        "tags": [ "apps" ],
+        "groupVersionKinds": [
+          { "apiVersion": "v1", "kind": "Service" },
+          { "apiVersion": "apps/v1", "kind": "Deployment" }
+        ]
+      }]
+  creationTimestamp: null
+  name: deployments.se.ext.tanzu.com.1.0.0
+spec:
+  refName: deployments.se.ext.tanzu.com
+  releasedAt: "2025-01-20T17:58:42Z"
+  template:
+    spec:
+      deploy:
+      - kapp: {}
+      fetch:
+      - imgpkgBundle:
+          image: ghcr.io/tanzu-solutions-engineering/tanzu-platform-capabilities/deployments@sha256:692e6e5414b9c852f547baef3c8ad0063e5f4cd9fe66b7954dbfcd4b85a5df4c
+      template:
+      - ytt:
+          paths:
+          - config
+      - kbld:
+          paths:
+          - '-'
+          - .imgpkg/images.yml
+  valuesSchema:
+    openAPIv3:
+      default: null
+      nullable: true
+  version: 1.0.0

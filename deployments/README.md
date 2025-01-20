@@ -1,0 +1,3 @@
+# Deployments
+
+This is a simple capability that exposes the K8s `Deployment` CRD, also it will expose the `Service` CRD since that is commonly used with deployments. Becuase this is a built in API it is assumed this is already installed on the clusters so all that needs to be done is to install the capability CRD. This CRD is automatically created by the package annotations so there is no contents of the package
