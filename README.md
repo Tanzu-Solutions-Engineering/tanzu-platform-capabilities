@@ -3,7 +3,11 @@
 This repo is a collection of field provided custom capabilties to add additional functionality to tanzu Platform. These are not officially suppoprted by Tanzu. 
 
 
-# Install
+## Capabilities
+
+[Deployments](./deployments/) - this enabled the `deployments.apps.v1` api and the `services.v1` core k8s apis 
+
+## Install
 
 Installing this repo will give access to all of the capabilties defined here.
 
