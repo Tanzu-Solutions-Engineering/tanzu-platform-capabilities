@@ -15,17 +15,17 @@ metadata:
         ]
       }]
   creationTimestamp: null
-  name: deployments.se.ext.tanzu.com.1.0.2
+  name: deployments.se.ext.tanzu.com.1.0.1
 spec:
   refName: deployments.se.ext.tanzu.com
-  releasedAt: "2025-01-20T18:17:09Z"
+  releasedAt: "2025-01-20T18:09:00Z"
   template:
     spec:
       deploy:
       - kapp: {}
       fetch:
       - imgpkgBundle:
-          image: ghcr.io/tanzu-solutions-engineering/tanzu-platform-capabilities/deployments@sha256:c567957502ddba3227cc14e317016279bfba0b440dce1d3bd63c073edeb4a834
+          image: ghcr.io/tanzu-solutions-engineering/tanzu-platform-capabilities/deployments@sha256:753065275fa651ce1b094b811d482a6da60419dca74abb9e0bc104140f7e0e28
       template:
       - ytt:
           paths:
@@ -38,4 +38,4 @@ spec:
     openAPIv3:
       default: null
       nullable: true
-  version: 1.0.2
+  version: 1.0.1
