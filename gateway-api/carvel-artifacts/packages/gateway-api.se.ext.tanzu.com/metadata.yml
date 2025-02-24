@@ -1,0 +1,9 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  creationTimestamp: null
+  name: gateway-api.se.ext.tanzu.com
+spec:
+  displayName: gateway-api
+  longDescription: gateway-api.se.ext.tanzu.com
+  shortDescription: gateway-api.se.ext.tanzu.com

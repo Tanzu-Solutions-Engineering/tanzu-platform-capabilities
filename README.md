@@ -5,6 +5,7 @@ This repo is a collection of field provided custom capabilties to add additional
 
 ## Capabilities
 
+[Gateway Api](./gateway-api/) - used a as a workaround for TKGm clusters, see the readme for more details
 [Deployments](./deployments/) - this enabled the `deployments.apps.v1` api and the `services.v1` core k8s apis 
 
 ## Install
@@ -15,14 +16,6 @@ Installing this repo will give access to all of the capabilties defined here.
 
 ```bash
 tanzu project use <your-proj>
-export KUBECONFIG=~/.config/tanzu/kube/config
-kubectl apply -f capabilities-repo/package-repository.yml
-```
-
-2. add the package repo to the cluster group(this is only needed until the next release of TP, instructions will be updated after the release)
-
-```bash
-tanzu ops clustergroup use <your-cg>
 export KUBECONFIG=~/.config/tanzu/kube/config
 kubectl apply -f capabilities-repo/package-repository.yml
 ```

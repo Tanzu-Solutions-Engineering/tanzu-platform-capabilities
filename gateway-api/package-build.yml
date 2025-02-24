@@ -1,0 +1,25 @@
+apiVersion: kctrl.carvel.dev/v1alpha1
+kind: PackageBuild
+metadata:
+  creationTimestamp: null
+  name: gateway-api.se.ext.tanzu.com
+spec:
+  release:
+  - resource: {}
+  template:
+    spec:
+      app:
+        spec:
+          deploy:
+          - kapp: {}
+          template:
+          - ytt:
+              paths:
+              - config
+          - kbld: {}
+      export:
+      - imgpkgBundle:
+          image: ghcr.io/tanzu-solutions-engineering/tanzu-platform-capabilities/gateway-api
+          useKbldImagesLock: true
+        includePaths:
+        - config

@@ -1,0 +1,38 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  annotations:
+    capability.tanzu.vmware.com/provides: |-
+      [{
+        "name": "gateway-api.se.ext.tanzu.com",
+        "displayName": "Gateway Api CRDs",
+        "description": "Provides the Gateway API CRDs as a workaround fot TKGm clusters",
+        "vendor": "Tanzu Field",
+        "tags": [ "networking" ],
+        "groupVersionKinds": []
+      }]
+  creationTimestamp: null
+  name: gateway-api.se.ext.tanzu.com.1.0.0
+spec:
+  refName: gateway-api.se.ext.tanzu.com
+  releasedAt: "2025-02-24T15:17:33Z"
+  template:
+    spec:
+      deploy:
+      - kapp: {}
+      fetch:
+      - imgpkgBundle:
+          image: ghcr.io/tanzu-solutions-engineering/tanzu-platform-capabilities/gateway-api@sha256:81cfb684601d4f65aaf7c733a7ecb149cceae40d01f154ead577edbd7721b68b
+      template:
+      - ytt:
+          paths:
+          - config
+      - kbld:
+          paths:
+          - '-'
+          - .imgpkg/images.yml
+  valuesSchema:
+    openAPIv3:
+      default: null
+      nullable: true
+  version: 1.0.0
