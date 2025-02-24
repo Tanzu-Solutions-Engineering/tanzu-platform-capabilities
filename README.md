@@ -5,8 +5,8 @@ This repo is a collection of field provided custom capabilties to add additional
 
 ## Capabilities
 
-[Gateway Api](./gateway-api/) - used a as a workaround for TKGm clusters, see the readme for more details
-[Deployments](./deployments/) - this enabled the `deployments.apps.v1` api and the `services.v1` core k8s apis 
+* [Gateway Api](./gateway-api/) - used a as a workaround for TKGm clusters, see the readme for more details
+* [Deployments](./deployments/) - this enabled the `deployments.apps.v1` api and the `services.v1` core k8s apis 
 
 ## Install
 
